@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Country Details</title>
+    <link rel="stylesheet" href="/styles/base.css" />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/">← Back</a>
+      <h1 id="country-name">Country</h1>
+      <div class="controls">
+        <button id="fav-toggle">Add to favorites</button>
+        <button id="theme-toggle">Toggle Theme</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="country-detail"></section>
+      <section id="map" style="height: 350px; margin-top: 1rem"></section>
+    </main>
+
+    <script type="module" src="/js/countryDetails.mjs"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </body>
+</html>

@@ -1,0 +1,358 @@
+/* General reset and font setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color, #f8f9fa);
+  color: var(--text-color, #333);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Page container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--header-color, #222);
+}
+
+/* Controls container (header buttons, selects, inputs) */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Favorites link styled as a button */
+.controls a.btn {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  background-color: var(--fav-link-bg, #28a745);
+  color: var(--fav-link-text, #fff);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--fav-link-bg, #28a745);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.controls a.btn:hover,
+.controls a.btn:focus {
+  background-color: #218838;
+  border-color: #1e7e34;
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Add to favorites / Remove from favorites buttons */
+#fav-toggle,
+.remove-fav {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  background-color: var(--fav-btn-bg, #ffc107);
+  color: var(--fav-btn-text, #212529);
+  border: 2px solid var(--fav-btn-bg, #ffc107);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  margin-left: 1rem;
+}
+
+#fav-toggle:hover,
+#fav-toggle:focus,
+.remove-fav-btn:hover,
+.remove-fav-btn:focus {
+  background-color: #e0a800;
+  border-color: #c69500;
+  color: #fff;
+  outline: none;
+}
+
+/* Theme toggle button styling */
+#theme-toggle {
+  padding: 0.5rem 1.1rem;
+  font-size: 1rem;
+  background-color: var(--theme-btn-bg, #6c757d);
+  color: var(--theme-btn-text, #fff);
+  border: 2px solid var(--theme-btn-bg, #6c757d);
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  margin-left: 1rem;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+  background-color: #5a6268;
+  border-color: #5a6268;
+  outline: none;
+  color: #e9ecef;
+}
+
+/* Input and select styling */
+input[type="search"],
+select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--input-border, #ccc);
+  border-radius: 5px;
+  background-color: var(--input-bg, #fff);
+  color: var(--input-text, #333);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+  min-width: 180px;
+}
+
+input[type="search"]:focus,
+select:focus {
+  border-color: var(--btn-bg, #007bff);
+  outline: none;
+  background-color: var(--input-bg-focus, #fff);
+}
+
+/* Grid layout for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card styling */
+.card {
+  background-color: var(--card-bg, #fff);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* ensures no distortion */
+  display: block;
+}
+
+/* Card content */
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--country-name-color, #444);
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--card-text, #666);
+  margin-bottom: 1rem;
+}
+
+/* Button styling inside cards (Learn More links) */
+.card-content a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--btn-bg, #260f26);
+  color: var(--btn-text, #fff);
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+.card h3 a {
+  color: var(--country-link-color, #444);
+  transition: color 0.3s ease;
+}
+
+.card h3 a:hover,
+.card h3 a:focus {
+  text-decoration: underline;
+  color: var(--country-link-hover-color, #0056b3);
+}
+
+.card-content a:hover {
+  background-color: var(--btn-bg-hover, #0056b3);
+}
+
+/* Responsive text alignment */
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Country details section */
+#country-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--card-bg, #fff);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center text */
+}
+
+#country-detail img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Headings and paragraphs */
+#country-detail h2 {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+#country-detail p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* Style for back link */
+.site-header a {
+  color: var(--back-link-color, #251f47); /* default dark purple */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.site-header a:hover,
+.site-header a:focus {
+  text-decoration: underline;
+  color: var(--back-link-hover-color, #71b48d); /* mint green */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls {
+    margin-top: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #country-detail {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  #map {
+    margin: 1rem;
+  }
+
+  #fav-toggle,
+  #theme-toggle,
+  .remove-fav-btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .controls a.btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Dark mode variables */
+:root[data-theme="light"] {
+  --bg-color: #f8f9fa;
+  --text-color: #333;
+  --header-color: #222;
+  --card-bg: #fff;
+  --card-title: #444;
+  --card-text: #666;
+  --btn-bg: #260f26;
+  --btn-bg-hover: #0056b3;
+  --btn-text: #fff;
+  --input-bg: #fff;
+  --input-text: #333;
+  --input-border: #ccc;
+  --input-bg-focus: #fff;
+  --country-name-color: #222;
+  --country-link-color: #222; /* dark text */
+  --country-link-hover-color: #251f47; /* primary dark purple */
+
+  /* Added variables for distinct buttons */
+  --theme-btn-bg: #000;
+  --theme-btn-text: #fff;
+
+  --fav-link-bg: #251f47;
+  --fav-link-text: #fff;
+
+  --fav-btn-bg: #ffc107;
+  --fav-btn-text: #212529;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --header-color: #eee;
+  --card-bg: #1e1e1e;
+  --card-title: #ddd;
+  --card-text: #bbb;
+  --btn-bg: #bb86fc;
+  --btn-bg-hover: #985eff;
+  --btn-text: #121212;
+  --input-bg: #2b2b2b;
+  --input-text: #eee;
+  --input-border: #555;
+  --input-bg-focus: #3b3b3b;
+  --country-name-color: #fff;
+  --country-link-color: #fff; /* white text */
+  --country-link-hover-color: #86cb92; /* emerald green */
+  --back-link-color: #fff; /* white in dark mode */
+  --back-link-hover-color: #86cb92; /* emerald green on hover */
+
+  /* Added variables for distinct buttons in dark mode */
+  --theme-btn-bg: #495057;
+  --theme-btn-text: #fff;
+
+  --fav-link-bg: #251f47;
+  --fav-link-text: #fff;
+
+  --fav-btn-bg: #d39e00;
+  --fav-btn-text: #212529;
+}

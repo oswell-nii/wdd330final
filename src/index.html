@@ -1,11 +1,40 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite Vanilla JS App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Info Country</title>
+    <link rel="stylesheet" href="/styles/base.css" />
   </head>
   <body>
-    <h1>Hello Vite</h1>
+    <header class="site-header">
+      <h1>Info Country</h1>
+      <div class="controls">
+        <select id="region-filter">
+          <option value="all">All regions</option>
+          <option value="Africa">Africa</option>
+          <option value="Americas">Americas</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search countries..."
+          aria-label="Search countries"
+        />
+        <button id="theme-toggle">Toggle Theme</button>
+        <a href="/favorites.html" class="btn">Favorites</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="results" class="grid">
+        <h2>Country Results</h2>
+      </section>
+    </main>
+
+    <script type="module" src="/js/main.mjs"></script>
   </body>
 </html>
