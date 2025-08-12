@@ -68,7 +68,7 @@ async function load() {
       <p><strong>Currency:</strong> ${currencyCode}${rateText}</p>
 
       <h3>Emergency Numbers</h3>
-      <ul>
+      <ul class="emergency-list">
         <li>Police: ${emergency.police}</li>
         <li>Ambulance: ${emergency.ambulance}</li>
         <li>Fire: ${emergency.fire}</li>
